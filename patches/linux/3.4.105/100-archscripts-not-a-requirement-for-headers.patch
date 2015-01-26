@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index cf2c8a8..5250daf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1055,7 +1055,7 @@ PHONY += archscripts
+ archscripts:
+ 
+ PHONY += __headers
+-__headers: include/linux/version.h scripts_basic asm-generic archheaders archscripts FORCE
++__headers: include/linux/version.h scripts_basic asm-generic archheaders FORCE
+ 	$(Q)$(MAKE) $(build)=scripts build_unifdef
+ 
+ PHONY += headers_install_all
