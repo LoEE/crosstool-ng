@@ -1,0 +1,20 @@
+diff --git a/system.h b/system.h
+index 3e6fe1d..ffa83da 100644
+--- a/gold/system.h
++++ b/gold/system.h
+@@ -100,6 +100,7 @@ struct hash<off_t> : public std::unary_function<off_t, std::size_t>
+ namespace __gnu_cxx
+ {
+ 
++#if !defined(_LIBCPP_VERSION)
+ template<>
+ struct hash<std::string>
+ {
+@@ -107,6 +108,7 @@ struct hash<std::string>
+   operator()(std::string s) const
+   { return __stl_hash_string(s.c_str()); }
+ };
++#endif
+ 
+ template<typename T>
+ struct hash<T*>
